@@ -32,29 +32,42 @@ const mockCards = [
 ];
 
 const CardDisplay = () => {
-  const [revealedStates, setRevealedStates] = useState([false, false, false, false, false]);
-  const [showSummary, setShowSummary] = useState(false);
-  const [mode, setMode] = useState("3"); // ตั้งค่า default เป็น 3 เพื่อเลือก 3 ใบ
-  const [selectedCards, setSelectedCards] = useState(3); // จำนวนการ์ดที่เลือก (3 หรือ 5)
+  const {
+    mode,
+    setMode,
+    revealedStates,
+    setRevealedStates,
+    showSummary,
+    setShowSummary,
+    selectedCards,
+    setSelectedCards,
+    handleRevealCard,
+    handleShowSummary,
+    handleModeChange,
+  } = useCard();
+  // const [revealedStates, setRevealedStates] = useState([false, false, false, false, false]);
+  // const [showSummary, setShowSummary] = useState(false);
+  // const [mode, setMode] = useState("3"); // ตั้งค่า default เป็น 3 เพื่อเลือก 3 ใบ
+  // const [selectedCards, setSelectedCards] = useState(3); // จำนวนการ์ดที่เลือก (3 หรือ 5)
 
-  const handleRevealCard = (index) => {
-    const newRevealedStates = [...revealedStates];
-    newRevealedStates[index] = true;
-    setRevealedStates(newRevealedStates);
-  };
+  // const handleRevealCard = (index) => {
+  //   const newRevealedStates = [...revealedStates];
+  //   newRevealedStates[index] = true;
+  //   setRevealedStates(newRevealedStates);
+  // };
 
-  const handleShowSummary = () => {
-    if (revealedStates.every((state) => state === true)) {
-      setShowSummary(true);
-    }
-  };
+  // const handleShowSummary = () => {
+  //   if (revealedStates.every((state) => state === true)) {
+  //     setShowSummary(true);
+  //   }
+  // };
 
-  const handleModeChange = (e) => {
-    setMode(e.target.value);
-    setSelectedCards(Number(e.target.value)); // กำหนดจำนวนการ์ดที่แสดงตาม `mode`
-    setRevealedStates(new Array(Number(e.target.value)).fill(false)); // รีเซ็ตสถานะการเปิดการ์ด
-    setShowSummary(false); // รีเซ็ตสรุป
-  };
+  // const handleModeChange = (e) => {
+  //   setMode(e.target.value);
+  //   setSelectedCards(Number(e.target.value)); // กำหนดจำนวนการ์ดที่แสดงตาม `mode`
+  //   setRevealedStates(new Array(Number(e.target.value)).fill(false)); // รีเซ็ตสถานะการเปิดการ์ด
+  //   setShowSummary(false); // รีเซ็ตสรุป
+  // };
 
   useEffect(() => {
     if (mode) {

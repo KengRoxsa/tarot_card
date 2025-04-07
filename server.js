@@ -24,6 +24,25 @@ app.get("/api/v1/cards", (req, res) => {
   }
 });
 
+app.post("/api/v1/cards/random", (req, res) => {
+  try {
+    const tarotCards = getCardsData();  // ดึงข้อมูลทั้งหมดจากไฟล์ JSON
+    console.log(tarotCards);  // ดูข้อมูลทั้งหมดที่โหลดจากไฟล์ JSON
+
+    if (!tarotCards || tarotCards.length === 0) {
+      return res.status(400).json({ message: "No cards available." });
+    }
+
+    // เลือกการ์ดแบบสุ่ม
+    const randomCard = tarotCards[Math.floor(Math.random() * tarotCards.length)];
+
+    res.json({ card: randomCard }); // ส่งการ์ดที่สุ่มออกมา
+  } catch (error) {
+    console.error("POST /cards/random error:", error);  // แสดงข้อผิดพลาด
+    res.status(500).json({ message: "Error processing the request." });
+  }
+});
+
 // เริ่มต้นเซิร์ฟเวอร์
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
