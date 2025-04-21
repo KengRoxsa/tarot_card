@@ -55,7 +55,7 @@ const CardDisplay = () => {
   return (
     <div>
       {/* เลือกจำนวนไพ่ที่ต้องการ */}
-      <div className="mt-7 mb-4 text-center">
+      <div className="mt-10 max-w-6xl mx-auto mb-4 text-center">
         <h2 className="text-xl font-semibold mb-4">เลือกจำนวนไพ่ที่ต้องการ</h2>
         <button
           onClick={handleModeChange}

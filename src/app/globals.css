@@ -35,14 +35,14 @@
 
 .infinite-scroll {
   display: flex;
-  justify-content: space-between; /* จัดให้อยู่ในแถวเดียวกันและห่างกัน */
+  justify-content: center; /* จัดให้อยู่ในแถวเดียวกันและห่างกัน */
   gap: 1rem; /* ระยะห่างระหว่างคอมเมนต์ */
 }
 
 .scroll-item {
   flex: 1; /* ให้แต่ละคอมเมนต์มีขนาดพอดี */
-  min-width: 200px; /* กำหนดขนาดขั้นต่ำ */
-  padding: 1rem;
+  padding: 0.5rem;
+  max-width: 16rem;
   background-color: #193f80;
   color: rgb(73, 0, 116);
   border-radius: 8px;
