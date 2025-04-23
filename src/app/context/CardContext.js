@@ -26,7 +26,7 @@ export const CardProvider = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/cards/random",
+        "https://tarot-sever-backend-production.up.railway.app/api/v1/cards/random",
         {
           excluded: [0], // สามารถปรับค่า excluded ได้ตามต้องการ
         }

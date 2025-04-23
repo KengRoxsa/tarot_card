@@ -16,7 +16,7 @@ function PoseDisplay() {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/comments")
+    fetch("https://tarot-sever-backend-production.up.railway.app/api/v1/comments")
       .then((response) => response.json())
       .then((data) => setComments(data.comments))
       .catch((error) => console.error("Error fetching comments:", error));

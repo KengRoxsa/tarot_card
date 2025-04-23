@@ -8,7 +8,7 @@ const TarotCards = () => {
   const [selectedCardIndex, setSelectedCardIndex] = useState(null); // เก็บ index ของการ์ดที่เลือก
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/cards")
+    fetch("https://tarot-sever-backend-production.up.railway.app/api/v1/cards")
       .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok");
         return response.json();

@@ -6,7 +6,7 @@ import axios from "axios";
 
 const fetchCardData = async () => {
   try {
-    const response = await axios.post("http://localhost:8080/api/v1/cards/random", {}); 
+    const response = await axios.post("https://tarot-sever-backend-production.up.railway.app/api/v1/cards/random", {}); 
     console.log("Fetched Data:", response.data); // แสดงข้อมูลที่ดึงมาจาก API
     return response.data.card; // ส่งข้อมูลการ์ดที่สุ่ม
   } catch (error) {
