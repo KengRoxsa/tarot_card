@@ -12,11 +12,13 @@ function Home() {
   return (
     <CardProvider>
       <Header />
-      <Upper />
-      <CardDisplay />
-      {/* <CardSummary /> มันเรียกใช้ใน CardDisplay พร้อมค่าต่างๆไปแล้ว */}
-      <PoseDisplay />
-      <CommendPose />
+      <main>
+        <Upper />
+        <CardDisplay />
+        {/* <CardSummary /> มันเรียกใช้ใน CardDisplay พร้อมค่าต่างๆไปแล้ว */}
+        <PoseDisplay />
+        <CommendPose />
+      </main>
       <Footer />
     </CardProvider>
   );

@@ -6,7 +6,7 @@ import axios from "axios";
 
 const fetchCardData = async () => {
   try {
-    const response = await axios.post("http://localhost:8080/api/v1/cards/random", {}); 
+    const response = await axios.post("https://tarot-sever-backend-production.up.railway.app/api/v1/cards/random", {}); 
     console.log("Fetched Data:", response.data); // แสดงข้อมูลที่ดึงมาจาก API
     return response.data.card; // ส่งข้อมูลการ์ดที่สุ่ม
   } catch (error) {
@@ -55,7 +55,7 @@ const CardDisplay = () => {
   return (
     <div>
       {/* เลือกจำนวนไพ่ที่ต้องการ */}
-      <div className="mt-7 mb-4 text-center">
+      <div className="mt-10 max-w-6xl mx-auto mb-4 text-center">
         <h2 className="text-xl font-semibold mb-4">เลือกจำนวนไพ่ที่ต้องการ</h2>
         <button
           onClick={handleModeChange}
